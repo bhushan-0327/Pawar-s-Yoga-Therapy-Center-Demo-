@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawar's Yog Therapy Center Pune</title>
+
+    <link rel="icon" href="uploads/Logo.png" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': '#FFFFFF',
+                        'section-bg-alt': '#F4F7EE',
+                        'primary-accent': '#2A9D42',
+                        'accent-hover': '#1e6b30',
+                        'secondary-accent': '#00300c',
+                        'text-heading': '#0f0f0f',
+                        'text-body': '#212121',
+                        'text-light': '#FFFFFF',
+                        'text-light-accent': '#023b00',
+                        'star-color': '#FFDF00',
+                        'footer-bg': '#001003',
+                        'card-border': '#076b1c',
+                        'card-border-hover': '#084201',
+                    },
+                    fontFamily: {
+                        sans: ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        html {
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #FFFFFF;
+            color: #212121;
+            animation: fadeIn 1.2s ease-out forwards;
+            overflow-x: hidden;
+        }
+
+        .form-select {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: 0.375rem;
+            background-color: #F4F7EE;
+            border: 1px solid #D1D5DB;
+            color: #212121;
+            font-size: 0.875rem;
+            transition: all 0.2s ease-in-out;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 1rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding-right: 3rem;
+            cursor: pointer;
+        }
+
+        .form-select:focus {
+            border-color: #2A9D42;
+            box-shadow: 0 0 0 2px rgba(42, 157, 66, 0.2);
+            outline: none;
+            background-color: #FFFFFF;
+        }
+
+        /* --- End Dropdown Styles --- */
+
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: #F3F4F6;
+            color: #2b2b2b;
+            transition: all 0.2s ease-in-out;
+            border: 1px solid transparent;
+        }
+
+        .filter-btn:hover {
+            background-color: #E5E7EB;
+        }
+
+        .filter-btn.active {
+            background-color: #2A9D42;
+            color: #FFFFFF;
+            border-color: #2A9D42;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease-in-out;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .gallery-item.hidden {
+            display: none;
+            opacity: 0;
+            transform: scale(0.9);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-item-title {
+            padding: 0.75rem 1rem;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: #FFFFFF;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body class="bg-page-bg text-text-body font-sans">
+    <nav id="mobile-nav"
+        class="fixed top-0 right-0 z-50 h-full w-3/5 max-w-xs bg-secondary-accent shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden">
+        <div class="flex justify-end p-4">
+            <button id="close-menu-btn" class="text-text-light text-3xl" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-5 p-6">
+            <a href="{{ url_for('home') }}" class="nav-link text-white/90 text-base hover:text-text-light">Home</a>
+            <a href="about.html" class="nav-link text-white/90 text-base hover:text-text-light">About Us</a>
+            <a href="{{ url_for('home') }}#services"
+                class="nav-link text-white/90 text-base hover:text-text-light">Services</a>
+            <a href="about.html#experts" class="nav-link text-white/90 text-base hover:text-text-light">Experts</a>
+            <a href="{{ url_for('home') }}#products"
+                class="nav-link text-white/90 text-base hover:text-text-light">Products</a>
+            <a href="{{ url_for('gallery_page') }}"
+                class="nav-link text-white/90 text-base hover:text-text-light">Gallery</a>
+            <a href="{{ url_for('home') }}#success-stories"
+                class="nav-link text-white/90 text-base hover:text-text-light">Success Stories</a>
+            <a href="{{ url_for('home') }}#contact"
+                class="nav-link bg-primary-accent text-text-light text-center font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+        </div>
+    </nav>
+    <div id="nav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden lg:hidden"></div>
+
+    <header class="bg-page-bg sticky top-0 z-30 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex justify-between items-center" aria-label="Main navigation">
+
+                <a href="{{ url_for('home') }}" class="flex items-center gap-3 flex-shrink-0"
+                    aria-label="Pawar's Yog Therapy Center">
+                    <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                        onerror="this.src='https://placehold.co/60x60/2A9D42/FFFFFF?text=PY'"
+                        alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14">
+                    <div>
+                        <h2 class="text-base sm:text-lg font-bold text-text-heading leading-tight">Pawar's Yog Therapy Center</h2>
+                        <p class="text-xs text-text-body">Since 2019</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center justify-center flex-grow gap-x-6">
+                    <a href="{{ url_for('home') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Home</a>
+                    <a href="about.html"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">About
+                        Us</a>
+                    <a href="{{ url_for('home') }}#services"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Services</a>
+                    <a href="about.html#experts"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Experts</a>
+                    <a href="{{ url_for('home') }}#products"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Products</a>
+                    <a href="{{ url_for('gallery_page') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Gallery</a>
+                    <a href="{{ url_for('home') }}#success-stories"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Success
+                        Stories</a>
+                </div>
+
+                <div class="hidden lg:flex items-center flex-shrink-0">
+                    <a href="{{ url_for('home') }}#contact"
+                        class="bg-primary-accent text-text-light font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+                </div>
+
+                <button id="open-menu-btn" class="lg:hidden text-text-heading text-2xl" aria-label="Open mobile menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="gallery-page" class="py-16 md:py-20 bg-section-bg-alt">
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+
+                <h2 class="text-3xl font-bold text-center text-text-heading mb-3">
+                    Our Gallery
+                </h2>
+                <p class="text-lg text-center text-text-body max-w-2xl mx-auto mb-12">
+                    Moments from Our Yoga Sessions and Events
+                </p>
+
+                <div id="filter-controls" class="max-w-xs mx-auto mb-12">
+                    <label for="category-filter" class="block text-sm font-medium text-text-body mb-2 text-center">
+                        Filter by Category:
+                    </label>
+                    <select id="category-filter" class="form-select">
+                        <option value="all" selected>All (General)</option>
+                        <option value="spiritual-event">Spiritual Event</option>
+                        <option value="workshop-camp">Short Workshop or Camp</option>
+                        <option value="ayurvedic-therapies">Ayurvedic Therapies</option>
+                        <option value="traditional-yoga">Traditional Yoga</option>
+                        <option value="medical-yogtherapy">Medical Yogtherapy</option>
+                        <option value="home-visit">Personal Home Visit</option>
+                    </select>
+                </div>
+                <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+
+                    {% if gallery_items %}
+                    {% for item in gallery_items %}
+
+                    <div class="gallery-item" data-category="all {{ item.category | default('all') }}">
+                        <img src="{{ url_for('uploaded_file', filename=item.image_filename) }}"
+                            onerror="this.src='https://placehold.co/400x300/eeeeee/aaaaaa?text=Gallery+Image'"
+                            alt="{{ item.title }}">
+                        <div class="gallery-item-title">
+                            <p>{{ item.title }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-center text-text-body w-full col-span-3">Gallery coming soon...</p>
+                    {% endif %}
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-footer-bg text-white/70 pt-16 pb-8">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="{{ url_for('home') }}" class="flex items-center gap-3 mb-4"
+                        aria-label="Pawar's Yog Therapy Center">
+                        <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                            onerror="this.src='https://placehold.co/60x60/2A9D42/FFFFFF?text=PY'"
+                            alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14 bg-white rounded-full p-1">
+                        <div>
+                            <h2 class="text-lg font-bold text-text-light leading-tight">Pawar's Yog Therapy Center</h2>
+                            <p class="text-xs text-white/70">Since 2019</p>
+                        </div>
+                    </a>
+                    <p class="text-sm">
+                        Dedicated to holistic wellness through authentic yoga therapy.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}"
+                                class="hover:text-primary-accent transition duration-200">Home</a></li>
+                        <li><a href="about.html" class="hover:text-primary-accent transition duration-200">About Us</a>
+                        </li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Services</a></li>
+                        <li><a href="{{ url_for('gallery_page') }}"
+                                class="hover:text-primary-accent transition duration-200">Gallery</a></li>
+                        <li><a href="{{ url_for('home') }}#success-stories"
+                                class="hover:text-primary-accent transition duration-200">Success Stories</a></li>
+                        <li><a href="{{ url_for('home') }}#contact"
+                                class="hover:text-primary-accent transition duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Our Services</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Medical Yoga Therapy</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Rope Belt Therapy</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Pranayam</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-20Loss">Massage Therapy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Get in Touch</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 w-4"></i>
+                            <span class="ml-3">Shop No 8, Greenoak Society, Cement Road, near Mhasoba Mandir, Manjari
+                                Budruk, Pune, Maharashtra 412307</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone w-4"></i>
+                            <span class="ml-3">+91 85509 21037</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-t border-white/20 my-8">
+
+            <div class="text-center text-xs text-white/50">
+                &copy; <span id="current-year"></span> Pawar's Yog Therapy Center. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            const openMenuBtn = document.getElementById('open-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const navOverlay = document.getElementById('nav-overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function openNav() {
+                if (mobileNav) mobileNav.classList.remove('translate-x-full');
+                if (navOverlay) navOverlay.classList.remove('hidden');
+                document.documentElement.classList.add('overflow-hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+            function closeNav() {
+                if (mobileNav) mobileNav.classList.add('translate-x-full');
+                if (navOverlay) navOverlay.classList.add('hidden');
+                document.documentElement.classList.remove('overflow-hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            if (openMenuBtn) openMenuBtn.addEventListener('click', openNav);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeNav);
+            if (navOverlay) navOverlay.addEventListener('click', closeNav);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('href');
+                    if (targetId && (targetId.includes('#') || !targetId.startsWith('http'))) {
+                        closeNav();
+                    }
+                });
+            });
+
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Gallery Filtering Logic (UPDATED) ---
+            const categoryFilter = document.getElementById('category-filter');
+            const galleryItems = document.querySelectorAll('#gallery-grid .gallery-item');
+
+            function filterGallery() {
+                const filter = categoryFilter.value;
+
+                galleryItems.forEach(item => {
+                    const categories = item.getAttribute('data-category');
+                    if (categories && categories.includes(filter)) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            }
+
+            if (categoryFilter) {
+                categoryFilter.addEventListener('change', filterGallery);
+            }
+
+        });
+    </script>
+</body>
+
+</html>

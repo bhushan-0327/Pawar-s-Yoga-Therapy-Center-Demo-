@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pawar's Yog Therapy Center Pune</title>
+    <meta name="description"
+        content="Pawar's Yog Therapy Center in Pune offers expert medical yoga, rope belt therapy, and pranayama to relieve back pain, neck pain, and joint issues. Personalized, safe, and effective guidance.">
+    <meta name="keywords"
+        content="Pawar's Yog, yoga therapy Pune, medical yoga, holistic wellness, pain relief, back pain relief, neck pain treatment, joint pain yoga, rope belt therapy, pranayama, Manjari Budruk yoga, Narayan Pawar">
+    <link rel="canonical" href="{{ url_for('home', _external=True) }}">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" href="{{ url_for('uploaded_file', filename='Logo.png') }}" type="image/png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': '#FFFFFF',
+                        'section-bg-alt': '#F4F7EE',
+                        'primary-accent': '#2A9D42',
+                        'accent-hover': '#1e6b30',
+                        'secondary-accent': '#00300c',
+                        'text-heading': '#0f0f0f',
+                        'text-body': '#212121',
+                        'text-light': '#FFFFFF',
+                        'text-light-accent': '#023b00',
+                        'star-color': '#FFDF00',
+                        'footer-bg': '#001003',
+                        'card-border': '#076b1c',
+                        'card-border-hover': '#084201',
+                    },
+                    fontFamily: {
+                        sans: ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style type="text/css">
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #FFFFFF;
+            color: #364A30;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .service-card ul {
+            list-style: '✓ ' inside;
+            padding-left: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card li {
+            margin-bottom: 0.25rem;
+            font-size: 0.875rem;
+        }
+
+        .service-card {
+            display: flex;
+            flex-direction: column;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            max-width: 340px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            border-color: #009311;
+            transform: translateY(-4px);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .service-card .service-content {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #006503;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p.desc {
+            font-size: 0.875rem;
+            color: #1f4613;
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .service-card .service-book-btn {
+            margin-top: auto;
+            padding-top: 0.75rem;
+            text-align: center;
+        }
+
+        .product-card {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: #FFFFFF;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #E0E0E0;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .product-card:hover {
+            border-color: #779C3A;
+            transform: translateY(-4px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .product-card-content {
+            padding: 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card-content h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #3F6826;
+        }
+
+        .product-card-content p.price {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #2A3A25;
+            margin-top: 0.25rem;
+        }
+
+        .product-card-content p.desc {
+            font-size: 0.875rem;
+            color: #364A30;
+            margin-top: 0.5rem;
+            line-height: 1.5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            min-height: 42px;
+        }
+
+        .product-card-content .buy-btn {
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .contact-card-bg {
+            background-color: #00380d;
+            position: relative;
+            border-radius: 0.5rem;
+        }
+
+        .contact-content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-form-input:focus {
+            background-color: #ffffff;
+            color: #364A30;
+            border-color: #779C3A;
+            ring: 1;
+            ring-color: #779C3A;
+        }
+
+        .footer-bg {
+            background-color: #001003;
+            position: relative;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        #hero-section {
+            background-image: url('/uploads/Business Website.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        @media (max-width: 767px) {
+            #hero-section {
+                background-image: url('/uploads/Business\ Website.jpg');
+                background-position: right 25% center;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+</head>
+
+<body class="bg-page-bg text-text-body font-sans">
+
+    <nav id="mobile-nav"
+        class="fixed top-0 right-0 z-50 h-full w-3/5 max-w-xs bg-secondary-accent shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end p-4">
+            <button id="close-menu-btn" class="text-text-light text-3xl" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-5 p-6">
+            <a href="{{ url_for('home') }}" class="nav-link text-white/90 text-base hover:text-text-light">Home</a>
+            <a href="{{ url_for('about_page') }}" class="nav-link text-white/90 text-base hover:text-text-light">About
+                Us</a>
+            <a href="{{ url_for('home') }}#services"
+                class="nav-link text-white/90 text-base hover:text-text-light">Services</a>
+            <a href="{{ url_for('home') }}#products"
+                class="nav-link text-white/90 text-base hover:text-text-light">Products</a>
+            <a href="{{ url_for('gallery_page') }}"
+                class="nav-link text-white/90 text-base hover:text-text-light">Gallery</a>
+            <a href="{{ url_for('home') }}#success-stories"
+                class="nav-link text-white/90 text-base hover:text-text-light">Success Stories</a>
+            <a href="{{ url_for('home') }}#contact"
+                class="nav-link bg-primary-accent text-text-light text-center font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+        </div>
+    </nav>
+    <div id="nav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+
+    <header class="bg-page-bg sticky top-0 z-30 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex justify-between items-center" aria-label="Main navigation">
+
+                <a href="{{ url_for('home') }}" class="flex items-center gap-3 flex-shrink-0"
+                    aria-label="Pawar's Yog Therapy Center - Homepage">
+                    <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                        onerror="this.src='https://placehold.co/60x60/269a47/FFFFFF?text=PY'"
+                        alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14">
+                    <div>
+                        <h2 class="text-base sm:text-lg font-bold text-text-heading leading-tight">Pawar's Yog Therapy
+                            Center</h2>
+                        <p class="text-xs text-text-body">Since 2019</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center justify-center flex-grow gap-x-6">
+                    <a href="{{ url_for('home') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Home</a>
+                    <a href="{{ url_for('about_page') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">About
+                        Us</a>
+                    <a href="{{ url_for('home') }}#services"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Services</a>
+                    <a href="{{ url_for('home') }}#products"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Products</a>
+                    <a href="{{ url_for('gallery_page') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Gallery</a>
+                    <a href="{{ url_for('home') }}#success-stories"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Success
+                        Stories</a>
+                </div>
+
+                <div class="hidden lg:flex items-center flex-shrink-0">
+                    <a href="{{ url_for('home') }}#contact"
+                        class="bg-primary-accent text-text-light font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+                </div>
+
+                <button id="open-menu-btn" class="lg:hidden text-text-heading text-2xl" aria-label="Open mobile menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="hero-section" class="py-20 md:py-28 bg-page-bg relative overflow-hidden">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Mandala_10_author_L.D.Gerber.svg" alt=""
+                class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[700px] h-[700px] opacity-[0.07] z-0 pointer-events-none lg:opacity-10"
+                role="presentation">
+            <div class="absolute inset-0 bg-black/60 z-1"></div>
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+                <div class="flex flex-col relative z-10">
+                    <div class="w-full lg:w-3/4 xl:w-2/3">
+                        <h1 class="text-4xl sm:text-5xl font-bold text-white leading-tight text-left">
+                            Live Pain-Free, Embrace Health and Happiness Today!
+                        </h1>
+                        <p class="mt-5 text-lg max-w-xl text-white/90">
+                            With 6 years of experience, medical yoga and rope-band therapy relieve back, neck, and joint
+                            pain. Safe, effective, and personalized guidance for a healthier you.
+                        </p>
+                        <p class="mt-4 text-base max-w-xl text-white/90">
+                            Wake up refreshed, pain-free, and full of vitality every day.
+                        </p>
+                        <div class="mt-8 flex justify-start">
+                            <button id="open-consult-modal-btn" type="button"
+                                class="bg-primary-accent text-text-light font-semibold px-8 py-3 rounded-md text-base hover:bg-accent-hover transition duration-200">
+                                Book Consultation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-16 md:py-20 bg-section-bg-alt">
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+                <h2 class="text-3xl font-bold text-center text-text-heading mb-3">
+                    Our Services
+                </h2>
+                <p class="text-lg text-center text-text-body max-w-2xl mx-auto mb-16">
+                    Programs Designed for Your Holistic Well-being
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Power.png') }}" alt="Power Yoga Session"
+                            class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Power Yoga</h3>
+                            <p class="desc">Power yoga is an energetic yoga style that increases the body's strength,
+                                flexibility, and stamina.</p>
+                            <ul class="text-text-body">
+                                <li>Lose 10-20 kg in 3-6 months</li>
+                                <li>Toned and sculpted body</li>
+                                <li>Increased stamina and energy</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Power%20Yoga%20sessions.%0A%0ACould%20you%20please%20confirm%20your%20class%20schedule%2C%20share%20the%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Medical Yoga.png') }}"
+                            alt="Medical Yoga Therapy" class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Medical Yoga</h3>
+                            <p class="desc">A therapeutic yoga program designed for specific health problems. Asanas are
+                                selected for each patient.</p>
+                            <ul class="text-text-body">
+                                <li>Controls Diabetes and High BP</li>
+                                <li>Beneficial for Thyroid and PCOD</li>
+                                <li>Suitable for heart patients</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Medical%20Yoga.%0A%0ACould%20you%20please%20confirm%20your%20availability%2C%20share%20the%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Rope.png') }}"
+                            alt="Rope Belt Therapy for back pain" class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Rope belt Therapy</h3>
+                            <p class="desc">A special therapy based on the Iyengar yoga method, which corrects spinal
+                                and joint disorders.</p>
+                            <ul class="text-text-body">
+                                <li>For Back Pain & Cervical Spondylitis</li>
+                                <li>Relief for Knee Pain & Slipped Disc</li>
+                                <li>Pain relief without surgery</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Rope%20Belt%20Therapy.%0A%0ACould%20you%20please%20confirm%20your%20availability%2C%20share%20the%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Pranayam.png') }}"
+                            alt="Pranayama breathing exercise" class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Pranayama</h3>
+                            <p class="desc">We teach Pranayama based on ancient yogic scriptures and scientific anatomy
+                                — customized to each person’s health condition and body type for safe, effective
+                                practice.</p>
+                            <ul class="text-text-body">
+                                <li>Asthma control & increased respiratory capacity</li>
+                                <li>Reduces stress, anxiety, and depression</li>
+                                <li>Boosts immunity and purifies the blood</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Pranayam%20sessions.%0A%0ACould%20you%20please%20confirm%20your%20availability%2C%20share%20the%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Massage.png') }}" alt="Relaxing Massage Therapy"
+                            class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Massage Therapy</h3>
+                            <p class="desc">Relieve muscle pain and de-stress with Therapeutic, Ayurvedic, Sports, and
+                                Relaxation Massages.</p>
+                            <ul class="text-text-body">
+                                <li>Muscle relaxation and pain relief</li>
+                                <li>Improved blood circulation</li>
+                                <li>Stress relief and better sleep</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Massage%20Therapy.%0A%0ACould%20you%20please%20confirm%20your%20availability%2C%20share%20your%20type-specific%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <img src="{{ url_for('uploaded_file', filename='Agnihotra.jpg') }}"
+                            onerror="this.src='https://placehold.co/360x180/fafafa/cccccc?text=Service+Image'"
+                            alt="Ayurvedic Naturopathy treatment" class="w-full h-48 object-cover">
+                        <div class="service-content">
+                            <h3>Ayurvedic Naturopathy</h3>
+                            <p class="desc">Natural treatment based on the five elements. Enhancing the body's own
+                                healing power.</p>
+                            <ul class="text-text-body">
+                                <li>Diet management and herbal remedies</li>
+                                <li>Solution for constipation, obesity, & skin issues</li>
+                                <li>Agnihotra therapy</li>
+                            </ul>
+                            <div class="service-book-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment%20for%20Ayurvedic%20Naturopathy.%0A%0ACould%20you%20please%20confirm%20your%20availability%2C%20share%20your%20fees%2C%20and%20let%20me%20know%20the%20process%20for%20scheduling%20a%20session%3F%0A%0AThank%20you%21"
+                                    target="_blank"
+                                    class="bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 inline-block">
+                                    Book Appointment
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="success-stories" class="py-12 md:py-16 bg-text-light-accent">
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+                <h2 class="text-3xl font-bold text-center text-text-light mb-3">
+                    Success Stories
+                </h2>
+                <p class="text-base text-center text-white/90 max-w-2xl mx-auto mb-10">
+                    Real Stories from Our Community
+                </p>
+                <div class="flex overflow-x-auto space-x-6 pb-4 hide-scrollbar max-w-full md:max-w-5xl mx-auto">
+                    <div
+                        class="testimonial-card flex-shrink-0 w-80 bg-page-bg p-5 rounded-lg shadow-md mx-auto flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-200">
+                        <h4 class="font-semibold text-secondary-accent text-lg mb-1">Michael McDonell</h4>
+                        <p class="text-xs text-text-body/80 mb-3">Retired Judge from USA</p>
+                        <div class="text-star-color text-base mb-4" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="text-text-body text-sm italic leading-relaxed">
+                            "Amazing. Professional gentle yoga for elder folks. My flexibility has improved greatly with
+                            four week’s training. Great experience"
+                        </blockquote>
+                    </div>
+                    <div
+                        class="testimonial-card flex-shrink-0 w-80 bg-page-bg p-5 rounded-lg shadow-md mx-auto flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-200">
+                        <h4 class="font-semibold text-secondary-accent text-lg mb-1">Ritu Shinde</h4>
+                        <p class="text-xs text-text-body/80 mb-3">IT Professional from Pune Maharashtra</p>
+                        <div class="text-star-color text-base mb-4" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="text-text-body text-sm italic leading-relaxed">
+                            "I highly recommend Narayan Sir as a yoga teacher. A few months ago, I joined his class to
+                            improve my fitness and with hopes of conceiving. After two months of consistent sessions, I
+                            naturally conceived. I’m extremely happy with the results and grateful for the positive
+                            impact his classes have had on my journey"
+                        </blockquote>
+                    </div>
+                    <div
+                        class="testimonial-card flex-shrink-0 w-80 bg-page-bg p-5 rounded-lg shadow-md mx-auto flex flex-col items-center text-center transition-all duration-300 ease-in-out hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gray-200">
+                        <h4 class="font-semibold text-secondary-accent text-lg mb-1">Dr. Rajat Sinha</h4>
+                        <p class="text-xs text-text-body/80 mb-3">MBBS from Delhi</p>
+                        <div class="text-star-color text-base mb-4" aria-label="5 out of 5 stars">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote class="text-text-body text-sm italic leading-relaxed">
+                            "I had postural issues from my sedentary work profile, and started to have hip pain. Dr
+                            Narayan Pawar was able to understand the root of the issue within 5 mins Consultation and I
+                            have started having resolution within 5 - 7 sittings. He is an ultra specialist and I highly
+                            recommend him."
+                        </blockquote>
+                    </div>
+                </div>
+                <div class="text-center mt-10">
+                    <a href="https://share.google/hkE37yd4CrFUuquzN" target="_blank"
+                        class="bg-page-bg text-primary-accent font-semibold px-8 py-3 rounded-md text-base hover:bg-white/90 transition duration-200 inline-block shadow-lg">
+                        More Reviews <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-16 md:py-20 bg-section-bg-alt">
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+                <h2 class="text-3xl font-bold text-center text-text-heading mb-3">
+                    Our Products
+                </h2>
+                <p class="text-lg text-center text-text-body max-w-2xl mx-auto mb-12">
+                    Tools and Aids to Support Your Practice
+                </p>
+                <div class="flex overflow-x-auto space-x-6 pb-4">
+                    {% if products %}
+                    {% for product in products %}
+                    <div class="product-card">
+                        <img src="{{ url_for('uploaded_file', filename=product.image_filename) }}"
+                            onerror="this.src='https://placehold.co/280x200/eeeeee/aaaaaa?text=Product+Image'"
+                            alt="{{ product.name }}">
+                        <div class="product-card-content">
+                            <h3>{{ product.name }}</h3>
+                            {% if product.price and product.price > 0 %}
+                            <p class="price">₹{{ "%.2f"|format(product.price) }}</p>
+                            {% endif %}
+                            <p class="desc">{{ product.description }}</p>
+                            <div class="buy-btn">
+                                <a href="https://wa.me/918550921037?text=Hello%2C%20I%20am%20interested%20in%20buying%20the%20{{ product.name|urlencode }}%20({% if product.price and product.price > 0 %}₹{{ "
+                                    %.2f"|format(product.price) }}{% endif %}).%20Please%20provide%20more%20details."
+                                    target="_blank"
+                                    class="product-buy-btn bg-primary-accent text-text-light font-semibold px-5 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200 w-full text-center inline-block">
+                                    Buy Now
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    {% else %}
+                    <p class="text-center text-text-body w-full">Products coming soon...</p>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 md:py-20 bg-page-bg">
+            <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+                <h2 class="text-3xl font-bold text-center text-text-heading mb-3">Contact Us</h2>
+                <p class="text-lg text-center text-text-body max-w-2xl mx-auto mb-12">
+                    We'd Love to Hear From You. Get in Touch!
+                </p>
+                <div class="contact-card-bg max-w-5xl mx-auto rounded-lg shadow-xl p-8 md:p-10 overflow-hidden">
+                    <div class="contact-content-wrapper grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-text-light mb-6">Our Center</h3>
+                            <p class="text-white/90 mb-6 text-sm">
+                                We are here to help you on your wellness journey. Reach out to us for appointments,
+                                inquiries, or any questions you may have.
+                            </p>
+                            <ul class="space-y-4 text-white/90 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fa-solid fa-location-dot text-primary-accent mt-1 w-5 flex-shrink-0"></i>
+                                    <span class="ml-3">
+                                        <strong class="text-text-light">Address:</strong><br>
+                                        Shop No 8, Greenoak Society, Cement Road, near Mhasoba Mandir, Manjari Budruk,
+                                        Pune, Maharashtra 412307
+                                    </span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-phone text-primary-accent w-5 flex-shrink-0"></i>
+                                    <span class="ml-3"><strong class="text-text-light">Phone:</strong> +91 85509
+                                        21037</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-envelope text-primary-accent w-5 flex-shrink-0"></i>
+                                    <span class="ml-3"><strong class="text-text-light">Email:</strong>
+                                        info@pawaryoga.com</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fa-solid fa-clock text-primary-accent w-5 flex-shrink-0"></i>
+                                    <span class="ml-3"><strong class="text-text-light">Time:</strong> 6:00 AM - 8:00 PM
+                                        (Mon - Sat)</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-text-light mb-6">Send Us a Message</h3>
+                            <form id="contact-form" class="space-y-4">
+                                <div>
+                                    <label for="contact-name" class="sr-only">Name</label>
+                                    <input type="text" name="contact-name" id="contact-name" placeholder="Your Name"
+                                        required
+                                        class="contact-form-input w-full px-4 py-2.5 rounded-md bg-white/90 border-transparent text-text-body placeholder:text-text-body/70 focus:bg-white focus:border-primary-accent focus:ring-1 focus:ring-primary-accent outline-none text-sm transition">
+                                </div>
+                                <div>
+                                    <label for="contact-message" class="sr-only">Message</label>
+                                    <textarea name="contact-message" id="contact-message" rows="4"
+                                        placeholder="Write your message..." required
+                                        class="contact-form-input w-full px-4 py-2.5 rounded-md bg-white/90 border-transparent text-text-body placeholder:text-text-body/70 focus:bg-white focus:border-primary-accent focus:ring-1 focus:ring-primary-accent outline-none text-sm transition"></textarea>
+                                </div>
+                                <div>
+                                    <button type="submit"
+                                        class="w-full bg-primary-accent text-text-light font-semibold px-8 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200">
+                                        Send on WhatsApp
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-bg text-white/70 pt-16 pb-8">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-12 footer-content">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="{{ url_for('home') }}" class="flex items-center gap-3 mb-4"
+                        aria-label="Pawar's Yog Therapy Center - Homepage">
+                        <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                            onerror="this.src='https://placehold.co/60x60/269a47/FFFFFF?text=PY'"
+                            alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14 bg-page-bg rounded-full p-1">
+                        <div>
+                            <h2 class="text-lg font-bold text-text-light leading-tight">Pawar's Yog Therapy Center</h2>
+                            <p class="text-xs text-white/70">Since 2019</p>
+                        </div>
+                    </a>
+                    <p class="text-sm">
+                        Dedicated to holistic wellness through authentic yoga therapy.
+                    </p>
+                    <div class="flex space-x-4 mt-5">
+                        <a href="https://www.facebook.com/vrushabh.pawar.92/" target="_blank" aria-label="Facebook"
+                            class="text-lg hover:text-text-light-accent transition duration-200"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/pawarsyogtherapycenter/" target="_blank"
+                            aria-label="Instagram"
+                            class="text-lg hover:text-text-light-accent transition duration-200"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/918550921037" target="_blank" aria-label="WhatsApp"
+                            class="text-lg hover:text-text-light-accent transition duration-200"><i
+                                class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}"
+                                class="hover:text-text-light-accent transition duration-200">Home</a></li>
+                        <li><a href="{{ url_for('about_page') }}"
+                                class="hover:text-text-light-accent transition duration-200">About Us</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-text-light-accent transition duration-200">Services</a></li>
+                        <li><a href="{{ url_for('gallery_page') }}"
+                                class="hover:text-text-light-accent transition duration-200">Gallery</a></li>
+                        <li><a href="{{ url_for('home') }}#success-stories"
+                                class="hover:text-text-light-accent transition duration-200">Success Stories</a></li>
+                        <li><a href="{{ url_for('home') }}#contact"
+                                class="hover:text-text-light-accent transition duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Our Services</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-text-light-accent transition duration-200">Medical Yoga
+                                Therapy</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-text-light-accent transition duration-200">Rope Belt
+                                Therapy</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-text-light-accent transition duration-200">Pranayam</a>
+                        </li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-text-light-accent transition duration-200">Massage
+                                Therapy</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Get in Touch</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 w-4"></i>
+                            <span class="ml-3">Shop No 8, Greenoak Society, Cement Road, near Mhasoba Mandir, Manjari
+                                Budruk, Pune, Maharashtra 412307</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone w-4"></i>
+                            <span class="ml-3">+91 85509 21037</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope w-4"></i>
+                            <span class="ml-3">info@pawaryoga.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-t border-white/20 my-8">
+
+            <div class="text-center text-xs text-white/50">
+                &copy; <span id="current-year"></span> Pawar's Yog Therapy Center. All Rights Reserved.
+                <div class="mt-2">
+                    <a href="#" id="admin-login-link" class="text-white/30 hover:text-white/70 transition duration-200">
+                        Admin Login
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="consult-modal-overlay" class="fixed inset-0 bg-black/60 z-40 hidden"></div>
+    <div id="consult-modal"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-page-bg rounded-lg shadow-xl z-50 w-full max-w-md p-6 hidden">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-secondary-accent">Book Your Consultation</h3>
+            <button id="close-consult-modal-btn" class="text-text-body text-2xl"
+                aria-label="Close modal">&times;</button>
+        </div>
+        <form id="consult-form">
+            <div class="space-y-4">
+                <div>
+                    <label for="consult-name" class="block text-sm font-medium text-text-body mb-1">Name</label>
+                    <input type="text" name="consult-name" id="consult-name" placeholder="Your Name" required
+                        class="w-full px-4 py-2 rounded-md border border-text-body/30 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent outline-none text-sm transition">
+                </div>
+                <div>
+                    <label for="consult-contact" class="block text-sm font-medium text-text-body mb-1">Contact (Phone or
+                        Email)</label>
+                    <input type="text" name="consult-contact" id="consult-contact" placeholder="Your Contact Info"
+                        required
+                        class="w-full px-4 py-2 rounded-md border border-text-body/30 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent outline-none text-sm transition">
+                </div>
+                <div>
+                    <label for="consult-instructions" class="block text-sm font-medium text-text-body mb-1">Instruction
+                        Note</label>
+                    <textarea name="consult-instructions" id="consult-instructions" rows="3"
+                        placeholder="Any specific instructions or health concerns?"
+                        class="w-full px-4 py-2 rounded-md border border-text-body/30 focus:border-primary-accent focus:ring-1 focus:ring-primary-accent outline-none text-sm transition"></textarea>
+                </div>
+                <div>
+                    <button type="submit"
+                        class="w-full bg-primary-accent text-text-light font-semibold px-8 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200">
+                        Send Request
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div id="request-success-overlay" class="fixed inset-0 bg-black/60 z-80 hidden"></div>
+    <div id="request-success-modal"
+        class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-page-bg rounded-lg shadow-xl z-90 w-full max-w-sm p-8 hidden text-center">
+        <i class="fa-solid fa-paper-plane text-5xl text-primary-accent mb-5"></i>
+        <h3 class="text-xl font-semibold text-secondary-accent mb-3">Request Sent!</h3>
+        <p class="text-text-body/90 text-sm mb-6">
+           Your request has been successfully sent to our Pawar's Yog Therapy Center. Our team will contact you soon.
+            <br><br>
+            <strong>Note:</strong> There is a charge of five hundred rupees for the consultation. Our team will provide you with the details after they contact you.
+        </p>
+        <button id="close-request-success-modal-btn"
+            class="w-full bg-primary-accent text-text-light font-semibold px-8 py-2.5 rounded-md text-sm hover:bg-accent-hover transition duration-200">
+            OK
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            window.addEventListener('load', () => {
+                document.body.style.opacity = 1;
+            });
+
+            const openMenuBtn = document.getElementById('open-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileNav = document.getElementById('mobile-nav');
+            const navOverlay = document.getElementById('nav-overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function openNav() {
+                if (mobileNav) mobileNav.classList.remove('translate-x-full');
+                if (navOverlay) navOverlay.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeNav() {
+                if (mobileNav) mobileNav.classList.add('translate-x-full');
+                if (navOverlay) navOverlay.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            if (openMenuBtn) openMenuBtn.addEventListener('click', openNav);
+            if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeNav);
+            if (navOverlay) navOverlay.addEventListener('click', closeNav);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('href');
+
+                    if (targetId && (targetId.includes('#') || !targetId.startsWith('http'))) {
+
+                        const targetUrl = new URL(link.href, window.location.href);
+                        const currentUrl = new URL(window.location.href);
+                        if (targetUrl.pathname === currentUrl.pathname) {
+                            closeNav();
+                        }
+                    }
+                });
+            });
+
+            document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetUrl = new URL(anchor.href, window.location.href);
+                    const currentUrl = new URL(window.location.href);
+
+                    if (targetUrl.pathname === currentUrl.pathname && targetUrl.hash) {
+                        const targetEl = document.querySelector(targetUrl.hash);
+                        if (targetEl) {
+                            e.preventDefault();
+
+                            const header = document.querySelector('header');
+                            const headerOffset = header ? header.offsetHeight : 0;
+                            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                            const offsetPosition = elementPosition - headerOffset - 20;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            const adminLoginLink = document.getElementById('admin-login-link');
+            if (adminLoginLink) {
+                adminLoginLink.addEventListener('click', async function (e) {
+                    e.preventDefault();
+                    const password = prompt("Enter Admin Password:", "");
+                    if (password) {
+                        try {
+                            const response = await fetch("{{ url_for('admin_login') }}", {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({ password: password })
+                            });
+                            const result = await response.json();
+                            if (result.success && result.redirect) {
+                                window.location.href = result.redirect;
+                            } else {
+                                alert(result.message || "Login failed.");
+                            }
+                        } catch (error) {
+                            console.error('Login error:', error);
+                            alert('An error occurred during login.');
+                        }
+                    }
+                });
+            }
+
+            const openConsultBtn = document.getElementById('open-consult-modal-btn');
+            const closeConsultBtn = document.getElementById('close-consult-modal-btn');
+            const consultModal = document.getElementById('consult-modal');
+            const consultOverlay = document.getElementById('consult-modal-overlay');
+            const consultForm = document.getElementById('consult-form');
+
+            const requestSuccessModal = document.getElementById('request-success-modal');
+            const requestSuccessOverlay = document.getElementById('request-success-overlay');
+            const closeRequestSuccessModalBtn = document.getElementById('close-request-success-modal-btn');
+
+            function openConsultModal() {
+                if (consultModal) consultModal.classList.remove('hidden');
+                if (consultOverlay) consultOverlay.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeConsultModal() {
+                if (consultModal) consultModal.classList.add('hidden');
+                if (consultOverlay) consultOverlay.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            function openRequestSuccessModal() {
+                if (requestSuccessModal) requestSuccessModal.classList.remove('hidden');
+                if (requestSuccessOverlay) requestSuccessOverlay.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            }
+
+            function closeRequestSuccessModal() {
+                if (requestSuccessModal) requestSuccessModal.classList.add('hidden');
+                if (requestSuccessOverlay) requestSuccessOverlay.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+            }
+
+            if (openConsultBtn) {
+                openConsultBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openConsultModal();
+                });
+            }
+            if (closeConsultBtn) closeConsultBtn.addEventListener('click', closeConsultModal);
+            if (consultOverlay) consultOverlay.addEventListener('click', closeConsultModal);
+
+            if (consultForm) {
+                consultForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('consult-name').value;
+                    const contact = document.getElementById('consult-contact').value;
+                    const notes = document.getElementById('consult-instructions').value;
+                    const submitButton = consultForm.querySelector('button[type="submit"]');
+                    
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+
+                    try {
+                        const response = await fetch("{{ url_for('submit_consultation') }}", {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({
+                                name: name,
+                                contact: contact,
+                                notes: notes
+                            })
+                        });
+
+                        const result = await response.json();
+
+                        if (response.ok && result.success) {
+                            closeConsultModal();
+                            consultForm.reset();
+                            openRequestSuccessModal();
+                        } else {
+                            alert(result.message || 'An error occurred. Please try again.');
+                        }
+
+                    } catch (error) {
+                        console.error('Submission error:', error);
+                        alert('An error occurred. Please check your connection and try again.');
+                    } finally {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Request';
+                    }
+                });
+            }
+
+            if (closeRequestSuccessModalBtn) closeRequestSuccessModalBtn.addEventListener('click', closeRequestSuccessModal);
+            if (requestSuccessOverlay) requestSuccessOverlay.addEventListener('click', closeRequestSuccessModal);
+
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const name = document.getElementById('contact-name').value;
+                    const message = document.getElementById('contact-message').value;
+
+                    const whatsappMessage = `Hello, I have an inquiry.%0A%0A*Name:* ${encodeURIComponent(name)}%0A*Message:* ${encodeURIComponent(message)}`;
+                    const whatsappUrl = `https://wa.me/918550921037?text=${whatsappMessage}`;
+
+                    window.open(whatsappUrl, '_blank');
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

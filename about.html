@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawar's Yog Therapy Center Pune</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="{{ url_for('uploaded_file', filename='Logo.png') }}" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+            background-color: #FFFFFF;
+            color: #212121;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .shadow-yoga {
+            box-shadow: 0 10px 15px -3px rgba(15, 32, 26, 0.2), 0 4px 6px -2px rgba(15, 32, 26, 0.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'page-bg': '#FFFFFF',
+                        'section-bg-alt': '#F4F7EE',
+                        'primary-accent': '#2A9D42',
+                        'accent-hover': '#1e6b30',
+                        'secondary-accent': '#00300c',
+                        'text-heading': '#0f0f0f',
+                        'text-body': '#212121',
+                        'text-light': '#FFFFFF',
+                        'text-light-accent': '#023b00',
+                        'star-color': '#FFDF00',
+                        'footer-bg': '#001003',
+                        'card-border': '#076b1c',
+                        'card-border-hover': '#084201',
+                    },
+                    fontFamily: {
+                        sans: ['Lexend', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-page-bg text-text-body">
+
+    <nav id="mobile-nav"
+        class="fixed top-0 right-0 z-50 h-full w-3/5 max-w-xs bg-secondary-accent shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex justify-end p-4">
+            <button id="close-menu-btn" class="text-text-light text-3xl" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="flex flex-col space-y-5 p-6">
+            <a href="{{ url_for('home') }}" class="nav-link text-white/90 text-base hover:text-text-light">Home</a>
+            <a href="{{ url_for('about_page') }}" class="nav-link text-white/90 text-base hover:text-text-light">About
+                Us</a>
+            <a href="{{ url_for('home') }}#services"
+                class="nav-link text-white/90 text-base hover:text-text-light">Services</a>
+            <a href="#experts" class="nav-link text-white/90 text-base hover:text-text-light">Experts</a>
+            <a href="{{ url_for('home') }}#products"
+                class="nav-link text-white/90 text-base hover:text-text-light">Products</a>
+            <a href="{{ url_for('gallery_page') }}"
+                class="nav-link text-white/90 text-base hover:text-text-light">Gallery</a>
+            <a href="{{ url_for('home') }}#success-stories"
+                class="nav-link text-white/90 text-base hover:text-text-light">Success Stories</a>
+            <a href="{{ url_for('home') }}#contact"
+                class="nav-link bg-primary-accent text-text-light text-center font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+        </div>
+    </nav>
+    <div id="nav-overlay" class="fixed inset-0 bg-black/50 z-40 hidden"></div>
+
+    <header class="bg-page-bg sticky top-0 z-30 shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex justify-between items-center" aria-label="Main navigation">
+
+                <a href="{{ url_for('home') }}" class="flex items-center gap-3 flex-shrink-0"
+                    aria-label="Pawar's Yoga Therapy Center - Homepage">
+                    <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                        alt="Pawar's Yoga Therapy Center Logo" class="w-auto h-14">
+                    <div>
+                        <h2 class="text-base sm:text-lg font-bold text-text-heading leading-tight">Pawar's Yoga Therapy
+                            Center
+                        </h2>
+                        <p class="text-xs text-text-body">Since 2019</p>
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center justify-center flex-grow gap-x-6">
+                    <a href="{{ url_for('home') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Home</a>
+                    <a href="{{ url_for('about_page') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">About
+                        Us</a>
+                    <a href="{{ url_for('home') }}#services"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Services</a>
+                    <a href="#experts"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Experts</a>
+                    <a href="{{ url_for('home') }}#products"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Products</a>
+                    <a href="{{ url_for('gallery_page') }}"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Gallery</a>
+                    <a href="{{ url_for('home') }}#success-stories"
+                        class="text-text-body text-sm font-medium hover:text-primary-accent transition duration-200">Success
+                        Stories</a>
+                </div>
+
+                <div class="hidden lg:flex items-center flex-shrink-0">
+                    <a href="{{ url_for('home') }}#contact"
+                        class="bg-primary-accent text-text-light font-semibold px-5 py-2 rounded-md hover:bg-accent-hover transition duration-200 text-sm">Contact</a>
+                </div>
+
+                <button id="open-menu-btn" class="lg:hidden text-text-heading text-2xl" aria-label="Open mobile menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="py-8 sm:py-12 md:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center mb-8 sm:mb-12 md:mb-16">
+                <h1
+                    class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-text-heading leading-tight mb-3 sm:mb-4 px-2">
+                    Our Roots in <span class="text-primary-accent">Holistic Healing</span>
+                </h1>
+                <p class="text-sm sm:text-base text-text-body max-w-3xl mx-auto px-4">
+                    Founded with a vision to bring peace, healing, and holistic health into people's lives, our journey
+                    is deeply rooted in personal transformation and family inspiration.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center mb-12 sm:mb-16 md:mb-20">
+                <div
+                    class="p-4 sm:p-6 bg-page-bg rounded-lg sm:rounded-xl shadow-lg border-t-4 border-secondary-accent order-2 md:order-1">
+                    <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-secondary-accent mb-3 sm:mb-4">The Power
+                        of
+                        Personal Healing</h2>
+                    <p class="text-sm sm:text-base text-text-body mb-3 sm:mb-4">
+                        Our story begins with <strong>Shri Prakash Pawar</strong>, the founder's father, who faced two
+                        severe accidents that became the foundation of our therapeutic approach.
+                    </p>
+                    <ul class="space-y-3 sm:space-y-4 text-sm sm:text-base text-text-body">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 text-primary-accent mt-1 mr-2 sm:mr-3">&#9658;</span>
+                            <p>
+                                <strong>Spinal Recovery:</strong> Years ago, a severe spinal injury from a work accident
+                                led doctors to recommend yoga. Through dedication and faith, he healed himself
+                                completely with consistent yogic practice.
+                            </p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 text-primary-accent mt-1 mr-2 sm:mr-3">&#9658;</span>
+                            <p>
+                                <strong>Second Chance:</strong> Later, a serious accident when a <strong>coconut tree
+                                    fell on his head</strong> once again reaffirmed yoga as his path to full and
+                                complete recovery.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div
+                    class="h-48 sm:h-64 md:h-full min-h-[250px] bg-section-bg-alt rounded-lg sm:rounded-xl shadow-inner flex items-center justify-center p-4 sm:p-6 order-1 md:order-2 overflow-hidden relative">
+                    <img src="{{ url_for('uploaded_file', filename='About.jpg') }}" 
+                         alt="Aachary Narayan Pawar and students practicing yoga" 
+                         class="absolute inset-0 w-full h-full object-cover">
+                </div>
+                </div>
+            
+            <div
+                class="bg-section-bg-alt bg-opacity-30 p-6 sm:p-8 md:p-10 rounded-lg sm:rounded-xl shadow-yoga mb-12 sm:mb-16 md:mb-20">
+                <div class="md:flex items-start md:items-center space-y-4 md:space-y-0 md:space-x-6 lg:space-x-10">
+                    <div class="text-3xl sm:text-4xl text-secondary-accent flex-shrink-0 text-center md:text-left">
+                        &#9733;
+                    </div>
+                    <div>
+                        <h3 class="text-xl sm:text-2xl font-semibold text-secondary-accent mb-2 sm:mb-3">Witnessing
+                            Transformation</h3>
+                        <p class="text-sm sm:text-base text-text-body">
+                            Around the same period, the founder's mother suffered a <strong>paralysis attack</strong>.
+                            Under Shri Prakash Pawar care, leveraging yogic practices and natural therapies, she
+                            gradually recovered and regained her strength. Witnessing both parents heal through the
+                            power of yoga became the greatest inspiration, solidifying a life-long commitment to
+                            holistic wellness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mb-10 sm:mb-12 md:mb-16">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-text-heading mb-6 sm:mb-8 px-2">Our
+                    Timeline of Service</h2>
+                <div class="relative max-w-4xl mx-auto">
+                    <div
+                        class="border-l-2 border-secondary-accent absolute h-full top-0 left-1/2 transform -translate-x-1/2 hidden sm:block">
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center w-full my-6 sm:my-8">
+                        <div class="w-full sm:w-1/2 sm:pr-6 md:pr-8 sm:text-right mb-4 sm:mb-0 pl-6 sm:pl-0">
+                            <p class="text-xs sm:text-sm font-light text-text-body mb-1">2018</p>
+                            <h4 class="text-lg sm:text-xl font-semibold text-text-heading mb-2">The First Step
+                            </h4>
+                            <p class="text-sm sm:text-base text-text-body">Founded <strong>Swarg Yog Chikitsa
+                                    Kendra</strong> in Morgaon, following a realization of a true purpose: dedicating
+                                life to serving people through yoga and holistic healing.</p>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-secondary-accent z-10 hidden sm:block flex-shrink-0">
+                        </div>
+                        <div class="w-full sm:w-1/2 sm:pl-6 md:pl-8"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row-reverse items-start sm:items-center w-full my-6 sm:my-8">
+                        <div class="w-full sm:w-1/2 sm:pl-6 md:pl-8 sm:text-left mb-4 sm:mb-0 pl-6 sm:pl-0">
+                            <p class="text-xs sm:text-sm font-light text-text-body mb-1">2022</p>
+                            <h4 class="text-lg sm:text-xl font-semibold text-text-heading mb-2">Establishing in
+                                Pune</h4>
+                            <p class="text-sm sm:text-base text-text-body">The dream expanded with the
+                                establishment of <strong>Pawar's Yog Therapy Center</strong> at Manjari Budruk, Pune,
+                                quickly becoming a trusted space for transformation and wellness.</p>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-secondary-accent z-10 hidden sm:block flex-shrink-0">
+                        </div>
+                        <div class="w-full sm:w-1/2 sm:pr-6 md:pr-8"></div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center w-full my-6 sm:my-8">
+                        <div class="w-full sm:w-1/2 sm:pr-6 md:pr-8 sm:text-right mb-4 sm:mb-0 pl-6 sm:pl-0">
+                            <p class="text-xs sm:text-sm font-light text-text-body mb-1">Today</p>
+                            <h4 class="text-lg sm:text-xl font-semibold text-text-heading mb-2">Family Mission
+                            </h4>
+                            <p class="text-sm sm:text-base text-text-body">Inspired by the journey, the
+                                founder's three sisters joined the mission, working together to spread health,
+                                happiness, and peace through Yoga and natural therapies.</p>
+                        </div>
+                        <div class="w-4 h-4 rounded-full bg-secondary-accent z-10 hidden sm:block flex-shrink-0">
+                        </div>
+                        <div class="w-full sm:w-1/2 sm:pl-6 md:pl-8"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="experts" class="text-center mb-12 sm:mb-16 md:mb-20">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-text-heading mb-2 sm:mb-3">Meet Our
+                    Experts</h2>
+                <p class="text-base sm:text-lg text-text-body max-w-3xl mx-auto px-4 mb-8 sm:mb-10 md:mb-12">
+                    The force behind the Pawar's Yog Therapy
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                    <div class="text-center">
+                        <div class="mx-auto mb-4 flex items-center justify-center">
+                            <img src="/uploads/Aachary Pawar.png" alt="Aachary Narayan Pawar" class="w-40 h-40">
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-heading mb-1">Aachary Narayan Pawar</h3>
+                        <p class="text-sm text-text-body leading-snug">
+                            Founder & Director of PYTC<br>
+                            Chief Medical Yoga Expert
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto mb-4 flex items-center justify-center">
+                            <img src="/uploads/Ovi Tai.png" alt="Ovi Tai" class="w-40 h-40 object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-heading mb-1">Ovi Tai</h3>
+                        <p class="text-sm text-text-body leading-snug">
+                            Yoga Instructor<br>
+                            Healing & Panchakarm Therapist
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto mb-4 flex items-center justify-center">
+                            <img src="/uploads/Yogita Tai.png" alt="Yogita Tai" class="w-40 h-40 object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-heading mb-1">Yogita Tai</h3>
+                        <p class="text-sm text-text-body leading-snug">
+                            Traditional Yog Expert
+                        </p>
+                    </div>
+                    <div class="text-center">
+                        <div class="mx-auto mb-4 flex items-center justify-center">
+                            <img src="/uploads/Aprna Tai.png" alt="Aparna Tai" class="w-40 h-40 object-cover">
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-heading mb-1">Aparna Tai</h3>
+                        <p class="text-sm text-text-body leading-snug">
+                            Medical & Traditional<br>
+                            Yog Therapist
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-footer-bg text-white/70 pt-16 pb-8">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-12">
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="{{ url_for('home') }}" class="flex items-center gap-3 mb-4"
+                        aria-label="Pawar's Yog Therapy Center - Homepage">
+                        <img src="{{ url_for('uploaded_file', filename='Logo.png') }}"
+                            alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14 bg-white rounded-full p-1">
+                        <div>
+                            <h2 class="text-lg font-bold text-text-light leading-tight">Pawar's Yog Therapy Center</h2>
+                            <p class="text-xs text-white/70">Since 2019</p>
+                        </div>
+                    </a>
+                    <p class="text-sm">
+                        Dedicated to holistic wellness through authentic yoga therapy.
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}"
+                                class="hover:text-primary-accent transition duration-200">Home</a></li>
+                        <li><a href="{{ url_for('about_page') }}"
+                                class="hover:text-primary-accent transition duration-200">About Us</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Services</a></li>
+                        <li><a href="#experts" class="hover:text-primary-accent transition duration-200">Experts</a>
+                        </li>
+                        <li><a href="{{ url_for('gallery_page') }}"
+                                class="hover:text-primary-accent transition duration-200">Gallery</a></li>
+                        <li><a href="{{ url_for('home') }}#success-stories"
+                                class="hover:text-primary-accent transition duration-200">Success Stories</a>
+                        </li>
+                        <li><a href="{{ url_for('home') }}#contact"
+                                class="hover:text-primary-accent transition duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Our Services</h5>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Medical Yoga
+                                Therapy</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Rope Belt Therapy</a>
+                        </li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Pranayam</a></li>
+                        <li><a href="{{ url_for('home') }}#services"
+                                class="hover:text-primary-accent transition duration-200">Massage Therapy</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-base font-semibold text-text-light mb-4">Get in Touch</h5>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-1 w-4"></i>
+                            <span class="ml-3">Shop No 8, Greenoak Society, Cement Road, near Mhasoba Mandir, Manjari
+                                Budruk, Pune, Maharashtra 412307</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone w-4"></i>
+                            <span class="ml-3">+91 85509 21037</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="border-t border-white/20 my-8">
+
+            <div class="text-center text-xs text-white/50">
+                &copy; <span id="current-year">2024</span> Pawar's Yog Therapy Center. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            window.addEventListener('load', () => {
+                document.body.style.opacity = 1;
+            });
+
+            const mobileNav = document.getElementById('mobile-nav');
+            const openMenuBtn = document.getElementById('open-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const navOverlay = document.getElementById('nav-overlay');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            function closeMenu() {
+                mobileNav.classList.add('translate-x-full');
+                navOverlay.classList.add('hidden');
+            }
+
+            openMenuBtn.addEventListener('click', () => {
+                mobileNav.classList.remove('translate-x-full');
+                navOverlay.classList.remove('hidden');
+            });
+
+            closeMenuBtn.addEventListener('click', closeMenu);
+            navOverlay.addEventListener('click', closeMenu);
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    const targetId = link.getAttribute('href');
+
+                    if (targetId && (targetId.includes('#') || !targetId.startsWith('http'))) {
+
+                        const targetUrl = new URL(link.href, window.location.href);
+                        const currentUrl = new URL(window.location.href);
+                        if (targetUrl.pathname === currentUrl.pathname) {
+                            closeNav();
+                        }
+                    }
+                });
+            });
+
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            document.querySelectorAll('a[href*="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetUrl = new URL(anchor.href, window.location.href);
+                    const currentUrl = new URL(window.location.href);
+
+                    if (targetUrl.pathname === currentUrl.pathname && targetUrl.hash) {
+                        const targetEl = document.querySelector(targetUrl.hash);
+                        if (targetEl) {
+                            e.preventDefault();
+
+                            const header = document.querySelector('header');
+                            const headerOffset = header ? header.offsetHeight : 0;
+                            const elementPosition = targetEl.getBoundingClientRect().top + window.pageYOffset;
+                            const offsetPosition = elementPosition - headerOffset - 20;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            if (!mobileNav.classList.contains('translate-x-full')) {
+                                closeMenu();
+                            }
+                        }
+                    }
+                });
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>
