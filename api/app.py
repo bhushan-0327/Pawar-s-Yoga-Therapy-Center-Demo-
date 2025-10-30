@@ -18,7 +18,7 @@ import datetime
 
 app = Flask(
     __name__,
-    template_folder="../",
+    template_folder=".",
     static_folder=".",
 )
 
@@ -300,5 +300,5 @@ def handle_request(action, id):
     return redirect(url_for("admin_panel"))
 
 
-#if __name__ == "__main__":
-#    app.run(debug=True)
+if __name__ == "__main__":
+   app.run(debug=True)
