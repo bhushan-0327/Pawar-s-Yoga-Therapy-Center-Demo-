@@ -93,9 +93,6 @@
             background-color: #FFFFFF;
         }
 
-        /* --- End Dropdown Styles --- */
-
-
         .filter-btn {
             padding: 0.5rem 1rem;
             border-radius: 9999px;
@@ -185,7 +182,8 @@
                         onerror="this.src='https://placehold.co/60x60/2A9D42/FFFFFF?text=PY'"
                         alt="Pawar's Yog Therapy Center Logo" class="w-auto h-14">
                     <div>
-                        <h2 class="text-base sm:text-lg font-bold text-text-heading leading-tight">Pawar's Yog Therapy Center</h2>
+                        <h2 class="text-base sm:text-lg font-bold text-text-heading leading-tight">Pawar's Yog Therapy
+                            Center</h2>
                         <p class="text-xs text-text-body">Since 2019</p>
                     </div>
                 </a>
@@ -220,7 +218,6 @@
             </nav>
         </div>
     </header>
-
     <main>
         <section id="gallery-page" class="py-16 md:py-20 bg-section-bg-alt">
             <div class="container mx-auto px-6 sm:px-8 lg:px-12">
@@ -267,7 +264,7 @@
                 </div>
             </div>
         </section>
-    </main>
+        </main>
 
     <footer class="bg-footer-bg text-white/70 pt-16 pb-8">
         <div class="container mx-auto px-6 sm:px-8 lg:px-12">
@@ -315,7 +312,7 @@
                         <li><a href="{{ url_for('home') }}#services"
                                 class="hover:text-primary-accent transition duration-200">Pranayam</a></li>
                         <li><a href="{{ url_for('home') }}#services"
-                                class="hover:text-primary-accent transition duration-20Loss">Massage Therapy</a></li>
+                                class="hover:text-primary-accent transition duration-200">Massage Therapy</a></li>
                     </ul>
                 </div>
                 <div>
@@ -341,7 +338,6 @@
             </div>
         </div>
     </footer>
-
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 
@@ -382,7 +378,6 @@
                 currentYearSpan.textContent = new Date().getFullYear();
             }
 
-            // --- Gallery Filtering Logic (UPDATED) ---
             const categoryFilter = document.getElementById('category-filter');
             const galleryItems = document.querySelectorAll('#gallery-grid .gallery-item');
 
